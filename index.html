@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Sugar Sweet Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <div class="page-icon">
+  <img src="images/iconoP1.png" alt="Icono Sweet Sugar Sweet Games">
+  </div>
+  <header>
+    <h1>Sweet Sugar Sweet Games</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre mí</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section>
+      <h2>Sobre mí</h2>
+      <p>Hola, Yo soy Sweet y esta es la pagina oficial de SSSG web.</p>
+    </section>
+
+    <section id="proyectos">
+  <h2>Mis Proyectos</h2>
+  <div class="proyectos-container">
+    
+    <!-- Proyecto 1 -->
+    <div class="proyecto-card">
+      <img class="portada" src="images/portada1.png" alt="Portada Proyecto 1">
+      <div class="proyecto-info">
+        <img class="icono" src="images/icono1.png" alt="Icono Proyecto 1">
+        <h3>La Boca de Maut</h3>
+        <a href="C:\Users\brada\OneDrive\Documentos\Juegos\Juegos SSSGAMES\La boca de Maut\Prueba 1.apk" target="_blank" class="btn">Descarga directa</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Sweet Sugar Sweet Games — Creada con mucho 💖 por EroDan y Sweet</p>
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@sweet.sugar.sweet?_t=ZS-90t5aPC3BzE&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/sweet_sssg?igsh=eDF0NzF1bzJqMWNx" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://discord.gg/Xvjg9abQkz" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://ko-fi.com/sweetsssg" target="_blank"><i class="fas fa-coffee"></i></a>
+    </div>
+  </footer>
+  <script>
+const icono = document.querySelector('.page-icon img');
+
+const imagenes = [
+  'images/iconoP1.png',
+  'images/iconoP2.png',
+  'images/iconoP3.png',
+  'images/iconoP4.png',
+  'images/iconoP5.png',
+  'images/iconoP6.png'
+];
+
+let index = 0;
+let rotation = 0;
+
+function cambiarIcono() {
+  index = (index + 1) % imagenes.length;
+  icono.src = imagenes[index];
+}
+
+// Rotación continua a velocidad fija
+function rotarContinuo() {
+  rotation += 1; // Ajusta este valor para velocidad (grados por frame)
+  icono.style.transform = `rotate(${rotation}deg)`; // Solo rotación, posición estable
+  requestAnimationFrame(rotarContinuo);
+}
+
+// Iniciar animaciones
+rotarContinuo();
+setInterval(cambiarIcono, 3000); // Cambiar imagen cada 3 segundos
+</script>
+</body>
+</html>

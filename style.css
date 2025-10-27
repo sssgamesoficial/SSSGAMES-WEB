@@ -1,0 +1,305 @@
+/* === Notas por si me olvido jajaja === */
+body {
+  background: linear-gradient(-45deg, #dd8193, #ff9bb3, #f58ea3, #dd8193);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+  font-family: 'Orbitron', system-ui, sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+
+}
+
+/* === Encabezado === */
+header {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 40px 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* === Menú de navegación === */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  border-color: #fff;
+}
+
+/* === Contenido principal === */
+main {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #fdfdfd;
+  font-size: 16px;
+  max-width: 650px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+/* === Footer === */
+footer {
+  background-color: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 14px;
+}
+
+/* Íconos sociales */
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 28px;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffe6eb;
+  transform: scale(1.2);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .social-icons a {
+    font-size: 24px;
+  }
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #fff;
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  margin: 0 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffebf0;
+  transform: scale(1.2);
+}
+
+/* === Sección de Proyectos === */
+#proyectos {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.proyecto-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.proyecto-card .portada {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.proyecto-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.proyecto-info .icono {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.proyecto-info h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.proyecto-info .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #dd8193;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.proyecto-info .btn:hover {
+  background-color: #ffe6eb;
+}
+
+/* Ícono fijo en la esquina superior derecha */
+.page-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+/* Pequeña oscilación flotante */
+.page-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: float 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.social-icons a i.fa-coffee {
+  color: #ffe6eb;
+}
+
+.social-icons a i.fa-coffee:hover {
+  color: #ffe6eb;
+}
+
+/* === Responsive para tablets === */
+@media (max-width: 992px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .proyectos-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .proyecto-card {
+    width: 80%;
+  }
+
+  .page-icon {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* === Responsive para móviles === */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  .proyecto-info h3 {
+    font-size: 16px;
+  }
+
+  .proyecto-card .portada {
+    height: 150px;
+  }
+
+  .page-icon {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 5px;
+  }
+}
