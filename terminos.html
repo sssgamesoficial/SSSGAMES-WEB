@@ -1,0 +1,134 @@
+<!-- ========================== POPUP DE EDAD Y TÉRMINOS ========================== -->
+<div id="age-modal" class="modal-overlay">
+    <div class="modal-box">
+        <h2>Verificación de Edad</h2>
+
+        <div class="terms-box">
+            <h3>TÉRMINOS Y CONDICIONES DE USO – SSsGames / SweetSugarSweetGames</h3>
+            <p><strong>Última actualización: 2025</strong></p>
+
+            <p>Bienvenido a SSSGames / SweetSugarSweetGames. Antes de acceder a este sitio web, navegar en él o descargar cualquiera de los juegos disponibles, es indispensable que leas, entiendas y aceptes los siguientes Términos y Condiciones de Uso. Al ingresar al sitio, declaras que has leído y aceptado completamente este documento.</p>
+
+            <h4>1. Requisitos de Edad</h4>
+            <p>Al acceder a esta página web, declaras que tienes 18 años o más. El contenido, enlaces y comunidades están dirigidos exclusivamente a adultos. Si eres menor de edad, no debes ingresar ni descargar juegos.</p>
+
+            <h4>2. Descargas y Manipulación de Archivos</h4>
+            <p>SSSGames / SweetSugarSweetGames garantiza que los archivos publicados están libres de virus. Sin embargo, si un archivo es modificado o distribuido por terceros, no nos hacemos responsables por daños, pérdidas, virus o alteraciones del archivo.</p>
+
+            <h4>3. Ausencia de Transacciones o Pagos</h4>
+            <p>Los juegos son completamente gratuitos. No existe venta, suscripción, microtransacciones o compras dentro de los juegos. Si un sitio externo cobra por ellos, no es oficial y no somos responsables de fraudes o engaños.</p>
+
+            <h4>4. Redes Sociales y Comunidad (incluye Discord)</h4>
+            <p>Para acceder a redes sociales debes ser mayor de 18 años. Las interacciones dentro de estas plataformas externas son responsabilidad de los usuarios. No nos hacemos responsables por conflictos, contenido o daños dentro de dichas plataformas.</p>
+
+            <h4>5. Información del Usuario</h4>
+            <p>SSSGames / SweetSugarSweetGames no solicita datos personales sensibles. Eres completamente responsable de lo que compartas en este sitio o plataformas externas.</p>
+
+            <h4>6. Limitación de Responsabilidad</h4>
+            <p>El uso del sitio y la descarga de archivos es bajo tu propio riesgo. No somos responsables por daños directos o indirectos derivados del uso del sitio o contenido modificado por terceros.</p>
+
+            <h4>7. Aceptación de los Términos</h4>
+            <p>Acceder al sitio significa que aceptas completamente los Términos y Condiciones. Si no estás de acuerdo, debes abandonar la página.</p>
+        </div>
+
+        <div class="modal-buttons">
+            <button id="btn-yes">✔ Soy mayor de 18 y acepto</button>
+            <button id="btn-no">✖ No soy mayor de edad</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Fondo */
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+        z-index: 9999;
+    }
+
+    /* Caja */
+    .modal-box {
+        background: #1b1b1b;
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 80%;
+        max-width: 850px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        animation: popup 0.4s ease;
+    }
+
+    @keyframes popup {
+        from { transform: scale(0.7); opacity: 0; }
+        to   { transform: scale(1); opacity: 1; }
+    }
+
+    .terms-box {
+        background: #111;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        max-height: 55vh;
+        overflow-y: auto;
+    }
+
+    .modal-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .modal-buttons button {
+        margin: 10px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #btn-yes {
+        background: #28a745;
+        color: white;
+    }
+
+    #btn-yes:hover {
+        background: #2ecc71;
+    }
+
+    #btn-no {
+        background: #c62828;
+        color: white;
+    }
+
+    #btn-no:hover {
+        background: #e53935;
+    }
+</style>
+
+<script>
+    const modal = document.getElementById("age-modal");
+    const yesBtn = document.getElementById("btn-yes");
+    const noBtn = document.getElementById("btn-no");
+
+    yesBtn.onclick = () => {
+        localStorage.setItem("adult_accepted", "true");
+        modal.style.display = "none";
+    };
+
+    noBtn.onclick = () => {
+        window.location.href = "https://google.com";
+    };
+
+    if (localStorage.getItem("adult_accepted") === "true") {
+        modal.style.display = "none";
+    }
+</script>
